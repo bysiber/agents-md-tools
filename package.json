@@ -34,5 +34,14 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bysiber/agents-md-tools.git"
+  },
+  "homepage": "https://github.com/bysiber/agents-md-tools#readme",
+  "bugs": {
+    "url": "https://github.com/bysiber/agents-md-tools/issues"
+  },
+  "author": "bysiber"
 }
