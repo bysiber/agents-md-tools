@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+*.log
+.DS_Store
+.agents-config.json
+agents/
+CLAUDE.md
+GEMINI.md
+.cursorrules
+.windsurfrules

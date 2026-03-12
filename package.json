@@ -1,0 +1,38 @@
+{
+  "name": "agents-md-tools",
+  "version": "1.0.0",
+  "description": "Generate, lint, and manage AGENTS.md files for AI coding agents",
+  "bin": {
+    "agents-md": "./bin/agents-md.js"
+  },
+  "main": "./src/index.js",
+  "files": [
+    "bin/",
+    "src/",
+    "templates/"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "dev": "node bin/agents-md.js"
+  },
+  "keywords": [
+    "agents-md",
+    "ai",
+    "claude-code",
+    "codex",
+    "gemini",
+    "lint",
+    "cli"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^14.0.3",
+    "chalk": "^5.6.2",
+    "glob": "^11.0.0",
+    "ignore": "^7.0.5",
+    "yaml": "^2.8.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
