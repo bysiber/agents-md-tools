@@ -29,6 +29,14 @@ program
   .option('--file <path>',     'path to AGENTS.md  [default: ./AGENTS.md]')
   .action(require('../src/audit'));
 
+// ── fix ──────────────────────────────────────────────────────────────────────
+program
+  .command('fix')
+  .description('Auto-fix common issues — add missing sections, deny-lists, and structure')
+  .option('--dry-run',         'show what would be fixed without writing')
+  .option('--file <path>',     'path to AGENTS.md  [default: ./AGENTS.md]')
+  .action(require('../src/fix'));
+
 // ── init ─────────────────────────────────────────────────────────────────────
 program
   .command('init')
