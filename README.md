@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/logo.svg" alt="agents-md-tools" width="120" />
+  <span style="font-size:80px">🔒</span>
 </p>
 
 <h1 align="center">agents-md-tools</h1>
@@ -12,7 +12,7 @@
   <a href="https://www.npmjs.com/package/agents-md-tools"><img src="https://img.shields.io/npm/v/agents-md-tools.svg?style=flat-square&color=6366f1" alt="npm version" /></a>
   <a href="https://www.npmjs.com/package/agents-md-tools"><img src="https://img.shields.io/npm/dm/agents-md-tools.svg?style=flat-square&color=10b981" alt="downloads" /></a>
   <a href="https://github.com/bysiber/agents-md-tools/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="license" /></a>
-  <a href="https://github.com/bysiber/agents-md-tools/actions"><img src="https://img.shields.io/github/actions/workflow/status/user/agents-md-tools/ci.yml?style=flat-square&label=CI" alt="CI" /></a>
+  <a href="https://github.com/bysiber/agents-md-tools/actions"><img src="https://img.shields.io/github/actions/workflow/status/bysiber/agents-md-tools/ci.yml?style=flat-square&label=CI" alt="CI" /></a>
   <a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg?style=flat-square" alt="node >= 18" /></a>
 </p>
 
@@ -126,6 +126,44 @@ npx agents-md lint --strict || exit 1
 | 70–79 | **B** | Good — some gaps in security or structure |
 | 60–69 | **C** | Fair — missing important sections |
 | < 60 | **F** | Failing — agent will likely misbehave |
+
+---
+
+### `agents-md audit`
+
+Deep security scan — detect credentials, destructive commands, and dangerous misconfigurations. Derived from scanning 74,688 real AGENTS.md files on GitHub.
+
+```bash
+# Basic audit
+agents-md audit
+
+# Strict mode — exit code 1 if CRITICAL or HIGH issues found
+agents-md audit --strict
+
+# Verbose — show data sources for each rule
+agents-md audit --verbose
+
+# JSON output
+agents-md audit --format json
+```
+
+**8 security rules:**
+
+| Severity | Rule | Detects |
+|----------|------|---------|
+| 🔴 CRITICAL | `no-credentials-in-config` | API keys, passwords, JWTs, private keys |
+| 🔴 CRITICAL | `no-env-file-exposure` | .env referenced without deny-list |
+| 🟡 HIGH | `no-unrestricted-access` | "full access", "no restrictions" grants |
+| 🟡 HIGH | `no-destructive-commands` | `rm -rf`, `DROP TABLE` without warnings |
+| 🟡 HIGH | `no-privilege-escalation` | `sudo`, `chmod 777`, `--privileged` |
+| 🟡 HIGH | `no-confirmation-bypass` | "execute without confirmation" patterns |
+| ⚠️ MEDIUM | `require-file-boundaries` | Missing allow/deny file access lists |
+| ⚠️ MEDIUM | `require-network-boundaries` | Network access without scoping |
+
+**CI one-liner:**
+```bash
+npx agents-md audit --strict || exit 1
+```
 
 ---
 
