@@ -11,8 +11,8 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/agents-md-tools"><img src="https://img.shields.io/npm/v/agents-md-tools.svg?style=flat-square&color=6366f1" alt="npm version" /></a>
   <a href="https://www.npmjs.com/package/agents-md-tools"><img src="https://img.shields.io/npm/dm/agents-md-tools.svg?style=flat-square&color=10b981" alt="downloads" /></a>
-  <a href="https://github.com/user/agents-md-tools/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="license" /></a>
-  <a href="https://github.com/user/agents-md-tools/actions"><img src="https://img.shields.io/github/actions/workflow/status/user/agents-md-tools/ci.yml?style=flat-square&label=CI" alt="CI" /></a>
+  <a href="https://github.com/bysiber/agents-md-tools/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="license" /></a>
+  <a href="https://github.com/bysiber/agents-md-tools/actions"><img src="https://img.shields.io/github/actions/workflow/status/user/agents-md-tools/ci.yml?style=flat-square&label=CI" alt="CI" /></a>
   <a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg?style=flat-square" alt="node >= 18" /></a>
 </p>
 
@@ -366,7 +366,7 @@ Contributions are welcome! Here's how to get started:
 
 ```bash
 # Clone the repo
-git clone https://github.com/user/agents-md-tools.git
+git clone https://github.com/bysiber/agents-md-tools.git
 cd agents-md-tools
 
 # Install dependencies
