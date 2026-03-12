@@ -19,6 +19,16 @@ program
   .option('--file <path>',     'path to AGENTS.md  [default: ./AGENTS.md]')
   .action(require('../src/lint'));
 
+// ── audit ────────────────────────────────────────────────────────────────────
+program
+  .command('audit')
+  .description('Security scan — detect credentials, destructive commands, and misconfigurations')
+  .option('--strict',          'exit with code 1 if CRITICAL or HIGH issues found')
+  .option('--format <fmt>',    'output format: text (default) | json')
+  .option('--verbose',         'show data sources for each rule')
+  .option('--file <path>',     'path to AGENTS.md  [default: ./AGENTS.md]')
+  .action(require('../src/audit'));
+
 // ── init ─────────────────────────────────────────────────────────────────────
 program
   .command('init')
